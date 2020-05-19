@@ -2,7 +2,7 @@
 
 namespace Control_Flow_Exercises_2
 {
-    class Exercises
+    public class Exercises
     {
         // 1- Write a program to count how many numbers between 1 and 100 are divisible by 3 with no remainder.
         // Display the count on the console.
@@ -30,13 +30,13 @@ namespace Control_Flow_Exercises_2
                 Console.Write("Enter a number, or 'ok' to exit: ");
                 var input = Console.ReadLine();
 
-                if (input == "ok") break;
+                if (input.ToLower() == "ok") break;
 
                 counter += int.Parse(input);
 
             }
 
-            Console.WriteLine("Sum of numbers is: " + counter);
+            Console.WriteLine("Sum of all numbers is: " + counter);
         }
 
         // 3- Write a program and ask the user to enter a number.
@@ -46,7 +46,7 @@ namespace Control_Flow_Exercises_2
         {
             Console.Write("Enter a number to factorialize: ");
 
-            var input = long.Parse(Console.ReadLine());
+            var input = Convert.ToInt64(Console.ReadLine());
             long result = 1;
 
             for (var i = 1; i <= input; i++)
@@ -71,7 +71,7 @@ namespace Control_Flow_Exercises_2
             {
                 Console.Write("Guess the number ({0} guesses remaining): ", i);
 
-                var guess = int.Parse(Console.ReadLine());
+                var guess = Convert.ToInt32(Console.ReadLine());
 
                 if (guess == secret)
                 {
@@ -95,13 +95,17 @@ namespace Control_Flow_Exercises_2
             Console.WriteLine("Enter a series of numbers separated by a comma, eg '4, 6, 1, 2, 12':");
             var input = Console.ReadLine();
 
+
+            // Regex to separate by comma and any number of whitespace including zero.
             const string split = @",\s*";
             var arr = System.Text.RegularExpressions.Regex.Split(input, split);
-            var max = int.Parse(arr[0]);
+
+            // Set first number as max
+            var max = Convert.ToInt64(arr[0]);
 
             foreach (var str in arr)
             {
-                var num = int.Parse(str);
+                var num = Convert.ToInt64(str);
                 if (num > max) max = num;
             }
 
