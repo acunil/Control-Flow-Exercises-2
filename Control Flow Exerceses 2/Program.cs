@@ -1,5 +1,4 @@
-﻿
-namespace Control_Flow_Exercises_2
+﻿namespace Control_Flow_Exercises_2
 {
     class Program
     {
@@ -10,6 +9,7 @@ namespace Control_Flow_Exercises_2
             Exercises.Exercise3();
             Exercises.Exercise4();
             Exercises.Exercise5();
+
         }
     }
 }

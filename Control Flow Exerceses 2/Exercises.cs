@@ -32,7 +32,7 @@ namespace Control_Flow_Exercises_2
 
                 if (input.ToLower() == "ok") break;
 
-                counter += int.Parse(input);
+                counter += Convert.ToInt32(input);
 
             }
 
